@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/themes/light-theme';
+@import './styles/themes/dark-theme';
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+.top-nav {
+    background: #333;
+    color: white;
+    padding: 10px;
+
+    a {
+        margin-right: 15px;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.private-container {
+    display: flex;
+
+    .sidebar {
+        width: 200px;
+        background: #222;
+        height: 100vh;
+        color: white;
+        padding: 1rem;
+    }
+
+                                .main-content {
+                                    flex: 1;
+                                    padding: 2rem;
+                                }
+                                }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

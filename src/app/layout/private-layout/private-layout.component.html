@@ -1,0 +1,13 @@
+<div class="private-layout">
+    <aside class="sidebar">
+        <h3>Menu</h3>
+        <a routerLink="/app/dashboard">Dashboard</a>
+        <button (click)="toggleTheme()">
+            {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
+        </button>
+    </aside>
+
+    <main class="main-content">
+        <router-outlet></router-outlet>
+    </main>
+    </div>
