@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>{{ isEditMode ? 'Edit Asset' : 'Add Asset' }}</h2>
+
+<form [formGroup]="assetForm" (ngSubmit)="save()">
+    <mat-dialog-content>
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Asset Name</mat-label>
+            <input matInput formControlName="name" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Category</mat-label>
+            <input matInput formControlName="category" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status" required>
+                <mat-option value="Available">Available</mat-option>
+                <mat-option value="Issued">Issued</mat-option>
+                <mat-option value="Under Maintenance">Under Maintenance</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Location</mat-label>
+            <input matInput formControlName="location" required />
+        </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="close()">Cancel</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="assetForm.invalid">
+            {{ isEditMode ? 'Update' : 'Add' }}
+        </button>
+    </mat-dialog-actions>
+</form>
+

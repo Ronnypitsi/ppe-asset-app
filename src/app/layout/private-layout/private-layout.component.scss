@@ -1,28 +1,134 @@
-.private-layout {
-    display: flex;
+// Main container fills the full height
+.sidenav-container {
     height: 100vh;
-
-    .sidebar {
-        width: 250px;
-        background-color: var(--sidebar-bg);
-        color: var(--sidebar-text);
-        padding: 1rem;
-
-        a {
-            display: block;
-            color: var(--sidebar-text);
-            text-decoration: none;
-            margin-bottom: 1rem;
-        }
-
-        button {
-            margin-top: 2rem;
-        }
+    background-color: var(--surface-bg);
     }
 
-    .main-content {
-        flex-grow: 1;
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        padding: 2rem;
-    } }
+// ==========================
+// SIDEBAR
+// ==========================
+.sidebar {
+    width: 200px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+        text-align: center;
+        padding: 1rem;
+        }
+    
+        .sb-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 0;
+    
+            .profile-image {
+                width: 60px;
+                height: 60px;
+                background-color: #ccc;
+                border-radius: 50%;
+                margin-bottom: 0.5rem;
+            }
+    
+            .sb-copy {
+                text-align: center;
+    
+                h3 {
+                    margin: 0;
+                    font-size: 14px;
+                    color: var(--sidebar-text);
+                }
+                span {
+                    font-size: 12px;
+                    opacity: 0.7;
+                    color: var(--sidebar-text);
+                }
+            }
+            }
+            
+            .sb-icon {
+                width: 20px;
+                margin-right: 12px;
+                vertical-align: middle;
+            }
+                        .mdc-list-item__primary-text{
+                            font-size: 12px!important;
+                            color: var(--sidebar-text);
+                        }
+            a.mat-list-item {
+                font-size: 12px!important;
+                color: var(--sidebar-text);
+            
+                .mat-icon {
+                        color: inherit;
+                        margin-right: 10px;
+                    }
+                
+                    &:hover {
+                        background-color: var(--hover-bg);
+                    }
+                
+                    &.active {
+                        background-color: #2979ff;
+                        font-weight: bold;
+                    }
+            }
+ }
+ .mdc-list-item.mdc-list-item--with-one-line {
+    height: 29px !important;
+}
+            // ==========================
+            // TOOLBAR (TOP NAV)
+            // ==========================
+            .top-nav {
+                background-color: var(--toolbar-bg);
+                    color: var(--toolbar-tex);
+                    display: flex;
+                    align-items: center;
+                    padding: 0 1rem;
+                    height: 64px;
+                
+                    .mobile-toggle {
+                        display: none;
+                    }
+                
+                    .spacer {
+                        flex: 1 1 auto;             }
+                .app-title {
+                    font-weight: 600;
+                    margin-left: 1rem;
+                }
+            
+            }
+    .sb-icon {
+        font-size: 20px;
+        margin-right: 12px;
+        color: inherit;
+        vertical-align: middle;
+    }
+// ==========================
+// MAIN CONTENT
+// ==========================
+.content {
+    padding: 1.5rem;
+    min-height: calc(100vh - 64px);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+// ==========================
+// RESPONSIVENESS
+// ==========================
+@media (max-width: 768px) {
+    .sidebar {
+        width: 250px;
+    }
+
+    .top-nav .mobile-toggle {
+        display: inline-flex;
+    }
+}

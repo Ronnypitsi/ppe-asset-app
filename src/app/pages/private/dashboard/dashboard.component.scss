@@ -1,0 +1,65 @@
+.dashboard-wrapper {
+    padding: 2rem;
+    color: var(--surface-text);
+    background-color: var(--surface-bg);
+}
+
+.dashboard-title {
+    margin-bottom: 1.5rem;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .stat-card {
+        flex: 1 1 200px;
+        background-color: var(--card--bg)!important;
+        color: var(--surface-text)!important;
+        padding: 1rem;
+        text-align: center;
+
+        h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 16px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2979ff;
+        }
+    }
+
+    .add-btn {
+        height: 56px;
+    }
+}
+
+.recent-activity {
+    margin-top: 2rem;
+
+    h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    table {
+        width: 100%;
+        background: var(--table-background-color);
+        border-radius: 4px;
+        overflow: hidden;
+
+        th,
+        td {
+            padding: 1rem;
+        }
+
+        th {
+            background-color:var(--table-th-background-color);
+        }
+    }
+}

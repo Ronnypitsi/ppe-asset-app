@@ -1,0 +1,23 @@
+.inventory-container {
+    padding: 20px;
+
+    .inventory-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        h1 {
+            margin: 0;
+            color: #1976d2;
+        }
+
+        button {
+            white-space: nowrap;
+        }
+    }
+
+    table {
+        width: 100%;
+    }
+}

@@ -1,0 +1,140 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    color:var(--surface-text);
+    background-color: var(--surface-bg);
+
+    section {
+        padding: 50px 20px;
+        text-align: center;
+
+        h2 {
+            margin-bottom: 20px;
+        }
+    }
+
+    .hero {
+        background: url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
+        color: var(--surface-text);
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+
+            h1 {
+                font-size: 36px;
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+
+            button {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .about {
+        background-color:#202a34;
+
+        p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+    }
+
+        .services {
+            .service-cards {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+    
+                .service-card {
+                    width: 300px;
+    
+                    img {
+                        height: 180px;
+                        object-fit: cover;
+                    }
+    
+                    mat-card-title {
+                        font-weight: bold;
+                    }
+    
+                    mat-card-content p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+    .screenshots {
+        .screenshots-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+
+            img {
+                width: 300px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+        .contact {
+            background-color: #202a34;
+            padding: 60px 20px;
+    
+            .contact-container {
+                max-width: 900px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                align-items: start;
+    
+                @media(max-width: 768px) {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                }
+    
+                .contact-text {
+                    h2 {
+                        font-size: 32px;
+                        margin-bottom: 15px;
+                        color: #1976d2;
+                    }
+    
+                    p {
+                        font-size: 16px;
+                        line-height: 1.6;
+                    }
+                }
+    
+                .contact-form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+    
+                    .full-width {
+                        width: 100%;
+                    }
+    
+                    button {
+                        width: 150px;
+                        align-self: flex-end;
+    
+                        @media(max-width: 768px) {
+                            align-self: center;
+                            width: 100%;
+                        }
+                    }
+                } } }
+   
+}

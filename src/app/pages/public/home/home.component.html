@@ -1,1 +1,97 @@
-<p>home works!</p>
+<div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to PPE & Tools Management</h1>
+            <p>Streamline your trainee PPE and tools tracking with ease and efficiency.</p>
+            <button mat-raised-button color="primary" routerLink="/register">Get Started</button>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about">
+        <h2>About Us</h2>
+        <p>
+            We are committed to empowering training programmes with efficient PPE and tools
+            management, ensuring accountability, safety compliance, and seamless operations.
+        </p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <mat-card class="service-card">
+                <mat-card-header>
+                    <mat-card-title>PPE Management</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="/assets/images/ppe-management.png" alt="PPE Management Screenshot">
+                <mat-card-content>
+                    <p>
+                        Track and issue PPE items to trainees efficiently, maintaining safety standards.
+                    </p>
+                </mat-card-content>
+            </mat-card>
+    
+            <mat-card class="service-card">
+                <mat-card-header>
+                    <mat-card-title>Tools Management</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="/assets/images/tools-management.png" alt="Tools Management Screenshot">
+                <mat-card-content>
+                    <p>
+                        Manage artisan tools inventory with issuing, returns, and condition monitoring.
+                    </p>
+                </mat-card-content>
+            </mat-card>
+    
+            <mat-card class="service-card">
+                <mat-card-header>
+                    <mat-card-title>Reporting & Analytics</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="/assets/images/reports.png" alt="Reporting Screenshot">
+                <mat-card-content>
+                    <p>
+                        Generate insightful reports for PPE usage, tool allocation, and stock alerts.
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </section>
+      
+
+<!-- Contact Us Section -->
+<section class="contact">
+    <div class="contact-container">
+        <div class="contact-text">
+            <h2>Contact Us</h2>
+            <p>
+                Have questions about our PPE & Asset Management System? Reach out and our team will get back to you
+                shortly.
+            </p>
+        </div>
+
+        <form [formGroup]="contactForm" (ngSubmit)="submitContact()" class="contact-form">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Message</mat-label>
+                <textarea matInput formControlName="message" rows="4" required></textarea>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">
+                Send Message
+            </button>
+        </form>
+    </div>
+    </section>
+</div>
+  

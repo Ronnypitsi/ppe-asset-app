@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Add PPE Item</h2>
+<mat-dialog-content>
+    <form #ppeForm="ngForm">
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="data.name" name="name" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Category</mat-label>
+            <input matInput [(ngModel)]="data.category" name="category" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="data.status" name="status" required>
+                <mat-option value="Available">Available</mat-option>
+                <mat-option value="Issued">Issued</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="data" [disabled]="!ppeForm.form.valid" cdkFocusInitial>Add</button>
+</mat-dialog-actions>
+

@@ -1,10 +1,25 @@
-<mat-toolbar color="primary">
-    <span>PPE & Asset Manager</span>
+<mat-toolbar  class="top-toolbar">
+    <button mat-icon-button class="mobile-toggle" (click)="toggleMobileMenu()">
+        <mat-icon>{{ mobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
+    </button>
+
+    <span class="logo-text">PPE & Asset Manager</span>
     <span class="spacer"></span>
-    <a mat-button routerLink="">Home</a>
-    <a mat-button routerLink="about">About</a>
-    <a mat-button routerLink="services">Services</a>
-    <a mat-button routerLink="login">Login</a>
-    <a mat-button routerLink="register">Register</a>
+<!-- Desktop Menu -->
+<nav class="desktop-menu">
+    <!-- <a mat-button routerLink="/about">About</a>
+    <a mat-button routerLink="/services">Services</a> -->
+    <a mat-raised-button class="login-bt" routerLink="/login">Login</a>
+    <!-- <a  routerLink="/register">Register</a> -->
+</nav>
 </mat-toolbar>
-<router-outlet></router-outlet>
+<!-- Mobile Menu -->
+<nav *ngIf="mobileMenuOpen" class="mobile-menu">
+    <a mat-list-item routerLink="/about" (click)="closeMobileMenu()">About</a>
+    <a mat-list-item routerLink="/services" (click)="closeMobileMenu()">Services</a>
+    <a mat-list-item routerLink="/login" (click)="closeMobileMenu()">Login</a>
+    <a mat-list-item routerLink="/register" (click)="closeMobileMenu()">Register</a>
+</nav>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

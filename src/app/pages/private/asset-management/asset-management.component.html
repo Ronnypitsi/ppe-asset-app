@@ -1,0 +1,50 @@
+<div class="asset-container">
+    <div class="asset-header">
+        <h1>Asset Management</h1>
+        <button mat-raised-button color="primary" (click)="addAsset()">Add Asset</button>
+    </div>
+
+    <table mat-table [dataSource]="assetList" class="mat-elevation-z8">
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Asset Name </th>
+            <td mat-cell *matCellDef="let asset"> {{asset.name}} </td>
+        </ng-container>
+
+        <!-- Category Column -->
+        <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef> Category </th>
+            <td mat-cell *matCellDef="let asset"> {{asset.category}} </td>
+        </ng-container>
+
+        <!-- Status Column -->
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let asset"> {{asset.status}} </td>
+        </ng-container>
+
+        <!-- Location Column -->
+        <ng-container matColumnDef="location">
+            <th mat-header-cell *matHeaderCellDef> Location </th>
+            <td mat-cell *matCellDef="let asset"> {{asset.location}} </td>
+        </ng-container>
+
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let asset">
+                <button mat-icon-button color="accent" (click)="editAsset(asset)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="deleteAsset(asset)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['name', 'category', 'status', 'location', 'actions']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['name', 'category', 'status', 'location', 'actions'];"></tr>
+    </table>
+</div>
+  

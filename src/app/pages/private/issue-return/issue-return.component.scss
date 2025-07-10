@@ -1,0 +1,51 @@
+.issue-return-container {
+    padding: 20px;
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: #1976d2;
+    }
+
+    .full-width {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .item-selection {
+        margin-bottom: 20px;
+
+        .item-groups {
+            display: flex;
+            gap: 20px;
+
+            div {
+                h4 {
+                    margin-bottom: 10px;
+                }
+
+                button {
+                    display: block;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .selected-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+
+        .quantity-field {
+            width: 100px;
+        }
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+    }
+}

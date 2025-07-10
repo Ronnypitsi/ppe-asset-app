@@ -1,13 +1,66 @@
-<div class="private-layout">
-    <aside class="sidebar">
-        <h3>Menu</h3>
-        <a routerLink="/app/dashboard">Dashboard</a>
-        <button (click)="toggleTheme()">
-            {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
-        </button>
-    </aside>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidebar" [mode]="isDesktop ? 'side' : 'over'" [opened]="isDesktop">
+        <div class="logo">
+            <img src="assets/images/Logo-White-1.svg" alt="Logo" height="40" />
+        </div>
 
-    <main class="main-content">
-        <router-outlet></router-outlet>
-    </main>
-    </div>
+        <div class="sb-details">
+            <div class="profile-image"></div>
+            <div class="sb-copy">
+                <h3>Rethabile Baloyi</h3>
+                <span>Student</span>
+            </div>
+        </div>
+
+        <mat-nav-list>
+            <a mat-list-item routerLink="/app/dashboard" (click)="closeOnMobile()">
+                <mat-icon class="sb-icon">dashboard</mat-icon>
+                Dashboard
+            </a>
+            
+            <a mat-list-item routerLink="/app/IssueReturn" (click)="closeOnMobile()">
+                <mat-icon class="sb-icon">
+                        recycling</mat-icon>
+                    Issue/Return
+            </a>
+            <a mat-list-item routerLink="/app/ppe-management" (click)="closeOnMobile()">
+                <mat-icon class="sb-icon">
+                    enhanced_encryption</mat-icon>
+                PPE Management
+            </a>
+            <a mat-list-item routerLink="/app/asset-management" (click)="closeOnMobile()">
+                <mat-icon class="sb-icon">web_asset</mat-icon>
+                Asset Management
+            </a>
+            <a mat-list-item routerLink="/app/inventory-management" (click)="closeOnMobile()">
+                <mat-icon class="sb-icon">table</mat-icon>
+                Inventory
+            </a>
+            <a mat-list-item routerLink="/app/users-management" (click)="closeOnMobile()">
+                <mat-icon class="sb-icon">admin_panel_settings</mat-icon>
+                Users
+            </a>
+            <a mat-list-item (click)="logout()">
+                <mat-icon class="sb-icon">logout</mat-icon>
+                Logout
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-toolbar  class="top-nav">
+            <button mat-icon-button (click)="sidenav.toggle()" class="mobile-toggle">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="app-title">Student Portal</span>
+            <span class="spacer"></span>
+            <button mat-button (click)="toggleTheme()">
+                {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
+            </button>
+        </mat-toolbar>
+
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+    </mat-sidenav-container>
